@@ -1,0 +1,2 @@
+version=3
+http://download.gna.org/mypaint/ mypaint-([\d\.]+)\.tar\.bz2

@@ -128,7 +128,7 @@ def tailor_debian_changelog(unpack_root, formal_version, ubuntu_series,
             tmpl = ("{package} ({tailored_version}) "
                     "{ubuntu_series}; urgency={urgency}")
             line = tmpl.format(**params)
-        print >>changelog_targ_fp, line
+        print >>changelog_targ_fp, line,
     changelog_src_fp.close()
     changelog_targ_fp.close()
 

@@ -1,3 +1,9 @@
+mypaint (1.2.0~alpha-0dev1) UNRELEASED; urgency=low
+
+  * Base version bump for alpha development track.
+
+ -- Andrew Chadwick <a.t.chadwick@gmail.com>  Mon, 27 Apr 2015 00:13:19 +0100
+
 mypaint (1.1.1~alpha-0dev2) UNRELEASED; urgency=low
 
   * Add dh-python to build-deps.

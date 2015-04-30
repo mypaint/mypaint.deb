@@ -56,7 +56,7 @@ install: build
 	# When the ABI settles a bit more, let's consider dynamic libs.
 	# https://mail.gna.org/public/mypaint-discuss/2013-01/msg00021.html
 	dh_install --fail-missing -X prev-template.xcf.gz -X FX_blender_prev.png -X label-brush-mypaint.sh -X generate.py
-	dh_installchangelogs changelog
+	dh_installchangelogs Changelog.md
 	dh_installdocs
 	dh_installmenu
 	dh_python2

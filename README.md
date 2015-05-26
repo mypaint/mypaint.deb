@@ -11,7 +11,7 @@ mostly geared towards PPA creation.
 ## Install dependencies
 
 Install the packages listed as dependencies in the [control](control)
-file, or use the [instructions in the main repository][(depinstrs).
+file, or use the [instructions in the main repository][depinstrs].
 
 ## Local binary builds
 

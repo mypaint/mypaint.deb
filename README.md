@@ -8,13 +8,21 @@ workflow in the form of patches to the debian/ tree in their VCS. This
 repository has a few extra scripts and READMEs beyond what Debian do,
 mostly geared towards PPA creation.
 
+## Install dependencies
+
+Install the packages listed as dependencies in the [control](control)
+file, or use the [instructions in the main repository][(depinstrs).
+
 ## Local binary builds
 
-These can be made in the normal quick way. Clone this repository into a
-working MyPaint tree and build:
+These can be made in the normal quick way. Clone MyPaint as normal, then
+clone this repository into that MyPaint tree, and build:
 
-    $ cd path/to/your/mypaint-git
+    $ cd path/to/your/working/area
+    $ git clone https://github.com/mypaint/mypaint.git
+    $ cd mypaint
     $ git clone https://github.com/mypaint/debian.git
+    $ git submodule update --init --force
     $ fakeroot debian/rules binary
 
 These binary builds should not be released anywhere, but they're handy
@@ -58,7 +66,7 @@ Practical notes:
   The `dch` tool is useful for this.
 
 
-
+[depinstrs]: https://github.com/mypaint/mypaint/blob/master/README_LINUX.md#build
 [debvers]: https://www.debian.org/doc/debian-policy/ch-controlfields.html#s-f-Version
 [ubuvers]: https://help.launchpad.net/Packaging/PPA/BuildingASourcePackage
 

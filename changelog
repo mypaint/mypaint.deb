@@ -1,3 +1,9 @@
+mypaint (1.2.0~beta-0dev1) UNRELEASED; urgency=low
+
+  * Base version bump for beta development track.
+
+ -- Andrew Chadwick <a.t.chadwick@gmail.com>  Sat, 11 Jul 2015 21:35:44 +0100
+
 mypaint (1.2.0~alpha-0dev1) UNRELEASED; urgency=low
 
   * Base version bump for alpha development track.

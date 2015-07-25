@@ -90,6 +90,39 @@ def make_pristine_tarball(tmpdir, newest_change_info):
     return tarball_basename
 
 
+def copy_pristine_tarball(rel_tarball_path, tmpdir, newest_change_info):
+    # Copy an existing pristine tarball.
+    # The name must be as generated
+    # by release.sh, e.g. mypaint-1.2.0-beta.0.tar.xz, and will
+    # be renamed to, e.g. mypaint_1.2.0~beta.0.orig.tar.gz
+    # to keep the debian tools happy.
+    rel_tarball_bn = os.path.basename(rel_tarball_path)
+    rel_tarball_bn_pfx = "{package}-{upstream_version}".format(
+        package = newest_change_info["package"],
+        upstream_version = newest_change_info["upstream_version"]
+                            .replace("~", "-"),
+    )
+    deb_tarball_bn_pfx = "{package}_{upstream_version}".format(
+        **newest_change_info
+    )
+    assert rel_tarball_bn_pfx != deb_tarball_bn_pfx
+    rel_tarball_bn_sfx = ".tar.xz"
+    deb_tarball_bn_sfx = ".orig.tar.xz"
+    assert rel_tarball_bn_sfx != deb_tarball_bn_sfx
+    assert rel_tarball_bn.startswith(rel_tarball_bn_pfx)
+    assert rel_tarball_bn.endswith(rel_tarball_bn_sfx)
+    deb_tarball_bn = (
+        rel_tarball_bn
+        .replace(rel_tarball_bn_pfx, deb_tarball_bn_pfx, 1)
+        .replace(rel_tarball_bn_sfx, deb_tarball_bn_sfx, 1)
+    )
+    assert deb_tarball_bn != rel_tarball_bn
+    deb_tarball_path = os.path.join(tmpdir, deb_tarball_bn)
+    logger.info("Copying %r to %r...", rel_tarball_path, deb_tarball_path)
+    shutil.copy(rel_tarball_path, deb_tarball_path)
+    return deb_tarball_bn
+
+
 def extract_release_info(unpack_root):
     # Extract the contents of an unpacked MyPaint's release_info file
     relinfo = {}
@@ -139,7 +172,21 @@ def build_ppa_source_uploads(tmpdir):
 
     newest_change_info = parse_newest_changelog_entry()
 
-    tarball_basename = make_pristine_tarball(tmpdir, newest_change_info)
+    if len(sys.argv) > 2:
+        raise RuntimeError, (
+            "usage: {script} [PRISTINETARXZ]"
+        ).format(os.path.basename(sys.argv[0]))
+    elif len(sys.argv) == 2:
+        tarball_basename = copy_pristine_tarball(
+            sys.argv[1],
+            tmpdir,
+            newest_change_info,
+        )
+    else:
+        tarball_basename = make_pristine_tarball(
+            tmpdir,
+            newest_change_info,
+        )
 
     orig_cwd = os.getcwd()
     package_name = newest_change_info["package"]

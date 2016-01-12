@@ -1,52 +1,32 @@
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: MyPaint
-Upstream-Contact: Martin Renold <martinxyz@gmx.ch>
-Source: http://mypaint.info/
+Upstream-Contact: Andrew Chadwick <a.t.chadwick@gmail.com>
+Source: http://mypaint.org/
 Comment: This package was debianized by Gürkan Sengün <gurkan@phys.ethz.ch>
   on Thu, 07 May 2009 21:50:39 +0200.
 
 Files: *
-Copyright: Copyright 2005-2012 Martin Renold and the MyPaint Development Team
-  Copyright 2005-2012 Martin Renold <martinxyz@gmx.ch>
-  Copyright 2005, 2007-2008 Artis Rozentāls <artis@aaa.apollo.lv>
-  Copyright 2007 Yves Combe <yves@ycombe.net>
-  Copyright 2007 Sebastian Kraft (desktop icon)
-  Copyright 2007, 2009-2012 Popolon <popolon@popolon.org>
-  Copyright 2008 Clement Skau <clementskau@gmail.com>
-  Copyright 2009 Marcelo "Tanda" Cervino <info@lodetanda.com.ar>
-  Copyright 2009-2012 Jon Nordby <jononor@gmail.com>
-  Copyright 2009 Álinson Santos <isoron@gmail.com>
-  Copyright 2009-2011 Tumagonx <mr_tiar@gmail.com>
-  Copyright 2009-2010, 2012 Ilya Portnov <portnov@iportnov.ru>
-  Copyright 2009 Jonas Wagner <veers@gmx.ch>
-  Copyright 2009-2010 Luka Čehovin <luka@tnode.com>
-  Copyright 2009-2012 Andrew Chadwick <a.t.chadwick@gmail.com>
-  Copyright 2010-2012 Till Hartmann <ich@till-hartmann.de>
-  Copyright 2010-2012 David Gowers <00ai99@gmail.com>
-  Copyright 2010 David Grundberg <individ@acc.umu.se>
-  Copyright 2011 Ben O'Steen <bosteen@gmail.com>
-  Copyright 2011 Ferry Jérémie <ferryjeremie@mothsart.com>
-  Copyright 2011-2012 しげっち 'sigetch' <sigetch@users.sourceforge.jp>
-  Copyright 2011-2012 Richard Jones <optigon17@gmail.com>
+Copyright: Copyright 2005-2016 Martin Renold and the MyPaint Development Team
 License: GPL-2+
 
-Files: lib/gdkpixbuf2numpy.hpp
+Files: lib/gdkpixbuf2numpy.*
 Copyright: Copyright 1998-2003 James Henstridge
-  Copyright 2008-2012 Martin Renold
+  Copyright 2008-2016 Martin Renold and the MyPaint Development Team
 License: GPL-2+
 
 Files: gui/gtkexcepthook.py
 Comment: http://www.daa.com.au/pipermail/pygtk/2003-August/005775.html
 Copyright: Copyright 2003 Gustavo J A M Carneiro <gjc@inescporto.pt>
   Copyright 2004-2005 Filip Van Raemdonck
-  Copyright 2009-2012 Martin Renold and the MyPaint Development Team
+  Copyright 2009-2016 Martin Renold and the MyPaint Development Team
 License: whatever-you-want
 
 Files: brushlib/*
-Copyright: Copyright (C) 2008-2011 Martin Renold and contributors
+Copyright: Copyright (C) 2008-2016 Martin Renold and the MyPaint Development Team
   Copyright 2008-2011 Martin Renold <martinxyz@gmx.ch>
   Copyright 2012 Jon Nordby <jononor@gmail.com>
 License: ISC
+Comment: at present, this is included as a submodule
 
 Files: pixmaps/cursor*arrow*.png pixmaps/cursor*crosshair*.png
   pixmaps/cursor*forbidden*.png pixmaps/cursor*hand*.png
@@ -65,25 +45,35 @@ Copyright: Released into the Public Domain
 License: public-domain
   Copyright released by holders.
 
-Files: desktop/*/mypaint-frame.* svg/mypaint-frame.svgz
-Copyright: 2012 FatCow Web Hosting
-Comment: SVGZ and generated bitmaps were derived through tracing and redrawing,
-  thus forming a derivative work. License is a Creative Commons license;
-  nevertheless, usage is compatible with GPL-2+ because this icon is themeable,
-  and thus may be replaced by the user at runtime.
-  .
-  Licensed under a Creative Commons Attribution 3.0 (US) License,
-  http://creativecommons.org/licenses/by/3.0/us/ . When attributing,
-  please link to this page on fatcow.com: http://www.fatcow.com/free-icons
-License: CC-BY-3.0-US
-
-Files: pixmaps/eye* pixmaps/lock*
-Copyright: Copyright 2009 the Inkscape Developers
-  With contributions by "jEsuSdA 8) www.jesusda.com"
+Files: glade/icons/*
+Copyright: Copyright 2011-2013 Martin Renold and the MyPaint Development Team
+  Adapted from icons in the Glade gistribution itself.
 License: GPL-2
 
+Files: brushes/*
+Copyright: Copyright 2011-2013 Martin Renold and the MyPaint Development Team
+  .
+  By policy, MyPaint's brush settings are released into the public domain.
+  See: <https://github.com/mypaint/mypaint/wiki/Licensing-policy>.
+License: CC0-1.0
+
+Files: brushes/ramon
+Copyright: Author: Ramón Miranda <mirandagraphic@gmail.com>
+License: CC0-1.0
+
+Files: brushes/tanda
+Copyright: Author: Marcelo "Tanda" Cerviño <info@lodetanda.com.ar>
+License: CC0-1.0
+
+Files: brushes/deevad/*
+Copyright: Author: David Revoy <info@davidrevoy.com>
+License: CC0-1.0
+
+Files: brushes/kaerhon_v1/*
+Copyright: Author: Guillaume Loussarévian
+License: CC0-1.0
+
 Files: palettes/MyPaint_Default.gpl palettes/Greys16.gpl palettes/Classic_4.gpl
-  brushes/deevad/*
 Copyright: Author: David Revoy <info@davidrevoy.com>
   Author: Andrew Chadwick <a.t.chadwick@gmail.com>
 License: CC0-1.0
@@ -119,7 +109,7 @@ Comment: taken from the Inkscape distribution
 Copyright: Copyright 2009 the Inkscape Developers
 License: GPL-2
 
-Files: palettes/Tango.gpl
+Files: palettes/Tango_Palette.gpl
 Copyright: Author: The Tango Desktop Project
 License: public-domain
   The Tango palette is released into the public domain
@@ -136,7 +126,7 @@ Copyright: Copyright 2011 MrMamurk <storm.86@list.ru>
 License: CC0-1.0
 
 Files: backgrounds/ramon/*
-Copyright: Copyright 2010 Ramon Miranda <mirandagraphic@gmail.com>
+Copyright: Copyright 2010 Ramón Miranda <mirandagraphic@gmail.com>
 License: CC0-1.0
 
 Files: debian/*
@@ -149,6 +139,9 @@ License: GPL-2
   .
   On Debian systems, the complete text of the GNU General Public License
   version 2 can be found in `/usr/share/common-licenses/GPL-2'.
+  .
+  This license is included with the MyPaint distribution in the file
+  named COPYING.
 
 License: GPL-2+
   http://www.gnu.org/licenses/gpl-2.0.html
@@ -169,6 +162,9 @@ License: GPL-2+
   .
   On Debian systems, the complete text of the GNU General Public License
   version 2 can be found in `/usr/share/common-licenses/GPL-2'.
+  .
+  This license is included with the MyPaint distribution in the file
+  named COPYING.
 
 License: whatever-you-want
   http://www.daa.com.au/pipermail/pygtk/2003-August/005775.html

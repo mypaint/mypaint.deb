@@ -1,3 +1,9 @@
+mypaint (1.2.0-0dev1) UNRELEASED; urgency=low
+
+  * New release.
+
+ -- Andrew Chadwick <a.t.chadwick@gmail.com>  Fri, 15 Jan 2016 19:56:57 +0000
+
 mypaint (1.2.0~beta.4-0dev2) UNRELEASED; urgency=low
 
   * Update copyright.

@@ -1,3 +1,10 @@
+mypaint (1.2.1~beta-0dev1) UNRELEASED; urgency=low
+
+  * New beta series for 1.2.1.
+  * Remove debian/menu file as per tech-ctte decision in #741573.
+
+ -- Andrew Chadwick <a.t.chadwick@gmail.com>  Sat, 02 Apr 2016 22:26:48 +0100
+
 mypaint (1.2.0-0dev1) UNRELEASED; urgency=low
 
   * New release.

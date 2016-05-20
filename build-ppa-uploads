@@ -175,7 +175,9 @@ def build_ppa_source_uploads(tmpdir):
     if len(sys.argv) > 2:
         raise RuntimeError, (
             "usage: {script} [PRISTINETARXZ]"
-        ).format(os.path.basename(sys.argv[0]))
+        ).format(
+            script = os.path.basename(sys.argv[0]),
+        )
     elif len(sys.argv) == 2:
         tarball_basename = copy_pristine_tarball(
             sys.argv[1],

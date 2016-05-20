@@ -1,6 +1,6 @@
 # Development-tracking Debianization of MyPaint
 
-This is a Debianization of MyPaint which tracks the development master
+This is a Debianization of MyPaint which tracks the `v1.2.x` development
 branch in git. It's where we maintain the official MyPaint project PPAs.
 
 Packaging work done here is intended to be fed into Debian's packaging
@@ -16,13 +16,14 @@ file, or use the [instructions in the main repository][depinstrs].
 ## Local binary builds
 
 These can be made in the normal quick way. Clone MyPaint as normal, then
-clone this repository into that MyPaint tree, and build:
+clone this repository into that MyPaint tree as "debian". Then call the
+`debian/rules` makefile thus:
 
     $ cd path/to/your/working/area
     $ git clone https://github.com/mypaint/mypaint.git
     $ cd mypaint
-    $ git clone https://github.com/mypaint/debian.git
     $ git submodule update --init --force
+    $ git clone -b v1.2.x https://github.com/mypaint/mypaint.deb.git debian
     $ fakeroot debian/rules binary
 
 These binary builds should not be released anywhere, but they're handy

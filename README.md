@@ -13,16 +13,20 @@ mostly geared towards PPA creation.
 Install the packages listed as dependencies in the [control](control)
 file, or use the [instructions in the main repository][depinstrs].
 
+Since 1.3.0~beta.1, you should build and install
+the latest [libmypaint package][libmypaintdeb]
+before trying to build this.
+
 ## Local binary builds
 
 These can be made in the normal quick way. Clone MyPaint as normal, then
-clone this repository into that MyPaint tree, and build:
+clone this repository into that MyPaint tree as "debian". Then call the
+`debian/rules` makefile thus:
 
     $ cd path/to/your/working/area
     $ git clone https://github.com/mypaint/mypaint.git
     $ cd mypaint
-    $ git clone https://github.com/mypaint/debian.git
-    $ git submodule update --init --force
+    $ git clone https://github.com/mypaint/mypaint.deb.git debian
     $ fakeroot debian/rules binary
 
 These binary builds should not be released anywhere, but they're handy
@@ -69,4 +73,5 @@ Practical notes:
 [depinstrs]: https://github.com/mypaint/mypaint/blob/master/README_LINUX.md#build
 [debvers]: https://www.debian.org/doc/debian-policy/ch-controlfields.html#s-f-Version
 [ubuvers]: https://help.launchpad.net/Packaging/PPA/BuildingASourcePackage
+[libmypaintdeb]: https://github.com/mypaint/libmypaint.deb
 

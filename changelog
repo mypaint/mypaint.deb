@@ -1,3 +1,9 @@
+mypaint (1.2.1-0dev1) UNRELEASED; urgency=low
+
+  * New release.
+
+ -- Andrew Chadwick <a.t.chadwick@gmail.com>  Sat, 21 Jan 2017 17:58:40 +0000
+
 mypaint (1.2.1~beta.1-0dev1) UNRELEASED; urgency=low
 
   * New beta base revision.

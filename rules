@@ -7,9 +7,6 @@
 DPKG_EXPORT_BUILDFLAGS = 1
 include /usr/share/dpkg/buildflags.mk
 
-# Program build options
-MYPAINT_SCONSOPTS = enable_openmp=true
-
 build: build-arch build-indep
 
 build-arch: build-stamp
@@ -18,9 +15,10 @@ build-indep: build-stamp
 
 build-stamp:
 	dh_testdir
-	scons $(MYPAINT_SCONSOPTS)
+	python setup.py build
 ifeq (,$(filter nocheck,$(DEB_BUILD_OPTIONS)))
-	MPLCONFIGDIR=`mktemp -d` python tests/test_mypaintlib.py
+	python setup.py nosetests --where lib
+	python setup.py test
 endif
 	touch $@
 
@@ -28,7 +26,7 @@ clean:
 	dh_testdir
 	dh_testroot
 	rm -f build-stamp
-	scons -c
+	python setup.py clean --all
 	rm -f lib/mypaintlib_wrap.cpp options.cache \
 	  .sconsign.dblite debian/*.debhelper debian/*.log
 	find . -type f -name "*.pyc" -exec rm -vf {} \;
@@ -39,8 +37,7 @@ install: build
 	dh_testroot
 	dh_prep
 	dh_installdirs
-	scons prefix=/usr $(MYPAINT_SCONSOPTS) \
-	  --install-sandbox=$(CURDIR)/debian/tmp
+	python setup.py install --prefix=/usr --root=$(CURDIR)/debian/tmp
 	dh_install --fail-missing -X prev-template.xcf.gz \
 	  -X FX_blender_prev.png -X label-brush-mypaint.sh
 	dh_installchangelogs Changelog.md
